@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <!-- Brand Name -->
+        <a class="navbar-brand" href="/">Kolam Renang Tirtayasa</a>
+
+        <!-- Toggle button for mobile view -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <!-- Home Link -->
+                <li class="nav-item">
+                    <a class="nav-link <%= (currentPage === 'home' ? 'active' : '') %>" href="/">Home</a>
+                </li>
+                <!-- About Link -->
+                <li class="nav-item">
+                    <a class="nav-link <%= (currentPage === 'about' ? 'active' : '') %>" href="/about">About</a>
+                </li>
+                <!-- Menu Link -->
+                <li class="nav-item">
+                    <a class="nav-link <%= (currentPage === 'menu' ? 'active' : '') %>" href="/menu">Menu</a>
+                </li>
+                <!-- Contact Link -->
+                <li class="nav-item">
+                    <a class="nav-link <%= (currentPage === 'contact' ? 'active' : '') %>" href="/contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

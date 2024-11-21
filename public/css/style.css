@@ -1,0 +1,162 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body dengan gambar latar belakang */
+body {
+    background-image: url('/images/kolam.jpg'); /* Ganti dengan path gambar Anda */
+    background-size: cover; /* Gambar akan mencakup seluruh layar */
+    background-repeat: no-repeat; /* Gambar tidak akan diulang */
+    background-attachment: fixed; /* Gambar tetap saat halaman di-scroll */
+    background-position: center; /* Gambar diatur ke tengah */
+    color: #333; /* Warna teks umum */
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007BFF; /* Warna untuk judul */
+    font-size: 36px;
+    background-color: rgba(255, 255, 255, 0.8); /* Transparansi untuk latar header */
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.8); /* Transparansi untuk subjudul */
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 8px;
+}
+
+/* Tabel */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    border: 1px solid #ddd; /* Border utama tabel */
+    border-radius: 8px; /* Sudut melengkung untuk tabel */
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.9); /* Transparansi pada tabel */
+}
+
+table th, table td {
+    border: 1px solid #ddd; /* Border antar sel */
+    padding: 12px;
+    text-align: center;
+    font-size: 16px;
+}
+
+table th {
+    background-color: #007BFF; /* Warna latar header tabel */
+    color: white;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f4f4f4; /* Warna latar baris genap */
+}
+
+table tr:nth-child(odd) {
+    background-color: #ffffff; /* Warna latar baris ganjil */
+}
+
+table tr:hover {
+    background-color: #e0f7fa; /* Warna saat baris di-hover */
+    cursor: pointer;
+}
+
+/* Tombol */
+button {
+    padding: 6px 12px;
+    margin: 5px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Form Tambah Kunjungan */
+form {
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.9); /* Transparansi untuk form */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form input, form select, form button {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form button {
+    background-color: #28a745; /* Warna tombol tambah */
+    color: white;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #555;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    table {
+        font-size: 14px;
+    }
+
+    form {
+        width: 90%;
+    }
+
+    input, select, button {
+        padding: 10px;
+    }
+}

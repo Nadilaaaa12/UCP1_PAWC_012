@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisata Kolam Renang Tirtayasa</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        /* Tambahkan gaya untuk teks tengah */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6; /* Warna latar belakang */
+        }
+
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        table th, table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+
+        table th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        form {
+            margin: 20px 0;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        form input, form button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        form button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <%- include("partials/header") %>
+
+    <h1>Daftar Kunjungan Kolam Renang Tirtayasa</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Tanggal Kunjungan</th>
+                <th>Jumlah Pengunjung</th>
+                <th>Paket Renang</th>
+                <th>Harga</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.forEach(item => { %>
+                <tr>
+                    <td><%= item.id %></td>
+                    <td><%= item.tanggal %></td>
+                    <td><%= item.jumlah %></td>
+                    <td><%= item.paket %></td>
+                    <td><%= item.harga %></td>
+                    <td>
+                        <form action="/edit/<%= item.id %>" method="POST" style="display: inline;">
+                            <input type="date" name="tanggal" value="<%= item.tanggal %>" required>
+                            <input type="number" name="jumlah" value="<%= item.jumlah %>" required>
+                            <input type="text" name="paket" value="<%= item.paket %>" required>
+                            <input type="number" name="harga" value="<%= item.harga %>" required>
+                            <button type="submit">Edit</button>
+                        </form>
+                        <form action="/hapus/<%= item.id %>" method="POST" style="display: inline;">
+                            <button type="submit">Hapus</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+    <h2>Tambah Kunjungan</h2>
+    <form action="/tambah" method="POST">
+        <input type="date" name="tanggal" placeholder="Tanggal Kunjungan" required>
+        <input type="number" name="jumlah" placeholder="Jumlah Pengunjung" required>
+        <input type="text" name="paket" placeholder="Paket Renang" required>
+        <input type="number" name="harga" placeholder="Harga" required>
+        <button type="submit">Tambah</button>
+    </form>
+
+    <%- include("partials/footer") %>
+</body>
+</html>
